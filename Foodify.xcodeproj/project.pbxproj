@@ -16,6 +16,12 @@
 		B09EF9C727D3836600A65B54 /* FoodifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9C627D3836600A65B54 /* FoodifyTests.swift */; };
 		B09EF9D127D3836600A65B54 /* FoodifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9D027D3836600A65B54 /* FoodifyUITests.swift */; };
 		B09EF9D327D3836600A65B54 /* FoodifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9D227D3836600A65B54 /* FoodifyUITestsLaunchTests.swift */; };
+		B09EF9E327D3A35F00A65B54 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9E227D3A35F00A65B54 /* OnboardingSlide.swift */; };
+		B09EF9E527D3A3B800A65B54 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09EF9E427D3A3B800A65B54 /* Onboarding.storyboard */; };
+		B09EF9E727D3A54200A65B54 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9E627D3A54200A65B54 /* OnboardingVC.swift */; };
+		B09EF9EA27D3A78400A65B54 /* UIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9E927D3A78400A65B54 /* UIViews.swift */; };
+		B09EF9EC27D3AC5500A65B54 /* OnboardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9EB27D3AC5500A65B54 /* OnboardingCVC.swift */; };
+		B09EF9EF27D3BB8900A65B54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09EF9EE27D3BB8900A65B54 /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		B09EF9CC27D3836600A65B54 /* FoodifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09EF9D027D3836600A65B54 /* FoodifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodifyUITests.swift; sourceTree = "<group>"; };
 		B09EF9D227D3836600A65B54 /* FoodifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B09EF9E227D3A35F00A65B54 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		B09EF9E427D3A3B800A65B54 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		B09EF9E627D3A54200A65B54 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		B09EF9E927D3A78400A65B54 /* UIViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViews.swift; sourceTree = "<group>"; };
+		B09EF9EB27D3AC5500A65B54 /* OnboardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCVC.swift; sourceTree = "<group>"; };
+		B09EF9EE27D3BB8900A65B54 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,9 @@
 		B09EF9AE27D3836300A65B54 /* Foodify */ = {
 			isa = PBXGroup;
 			children = (
+				B09EF9E827D3A75000A65B54 /* Extensions */,
+				B09EF9E027D3A33200A65B54 /* Controllers */,
+				B09EF9DF27D3A32900A65B54 /* Models */,
 				B09EF9AF27D3836300A65B54 /* AppDelegate.swift */,
 				B09EF9B127D3836300A65B54 /* SceneDelegate.swift */,
 				B09EF9B327D3836300A65B54 /* ViewController.swift */,
@@ -125,6 +140,49 @@
 				B09EF9D227D3836600A65B54 /* FoodifyUITestsLaunchTests.swift */,
 			);
 			path = FoodifyUITests;
+			sourceTree = "<group>";
+		};
+		B09EF9DF27D3A32900A65B54 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B09EF9E227D3A35F00A65B54 /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B09EF9E027D3A33200A65B54 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B09EF9ED27D3BB7000A65B54 /* Home */,
+				B09EF9E127D3A34400A65B54 /* Onboarding */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B09EF9E127D3A34400A65B54 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B09EF9E427D3A3B800A65B54 /* Onboarding.storyboard */,
+				B09EF9E627D3A54200A65B54 /* OnboardingVC.swift */,
+				B09EF9EB27D3AC5500A65B54 /* OnboardingCVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B09EF9E827D3A75000A65B54 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B09EF9E927D3A78400A65B54 /* UIViews.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B09EF9ED27D3BB7000A65B54 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B09EF9EE27D3BB8900A65B54 /* Home.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +290,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B09EF9BC27D3836500A65B54 /* LaunchScreen.storyboard in Resources */,
+				B09EF9EF27D3BB8900A65B54 /* Home.storyboard in Resources */,
 				B09EF9B927D3836500A65B54 /* Assets.xcassets in Resources */,
 				B09EF9B727D3836300A65B54 /* Main.storyboard in Resources */,
+				B09EF9E527D3A3B800A65B54 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +318,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09EF9E327D3A35F00A65B54 /* OnboardingSlide.swift in Sources */,
+				B09EF9EC27D3AC5500A65B54 /* OnboardingCVC.swift in Sources */,
 				B09EF9B427D3836300A65B54 /* ViewController.swift in Sources */,
+				B09EF9EA27D3A78400A65B54 /* UIViews.swift in Sources */,
+				B09EF9E727D3A54200A65B54 /* OnboardingVC.swift in Sources */,
 				B09EF9B027D3836300A65B54 /* AppDelegate.swift in Sources */,
 				B09EF9B227D3836300A65B54 /* SceneDelegate.swift in Sources */,
 			);
