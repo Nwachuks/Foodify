@@ -15,9 +15,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func mainBtnTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "OnboardingVC") as! OnboardingVC
+//        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "OnboardingVC") as! OnboardingVC
+//        controller.modalPresentationStyle = .fullScreen
+//        self.present(controller, animated: true, completion: nil)
+        
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
         controller.modalPresentationStyle = .fullScreen
+        controller.modalTransitionStyle = .flipHorizontal
         self.present(controller, animated: true, completion: nil)
     }
     

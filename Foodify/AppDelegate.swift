@@ -9,11 +9,24 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        let window = UIWindow(frame: UIScreen.main.bounds)
+//
+//        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+//        let nav = storyboard.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
+//        window.rootViewController = nav
+//
+//        window.makeKeyAndVisible()
+//        self.window = window
+        
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().tintColor = .black
+        
         return true
     }
 
