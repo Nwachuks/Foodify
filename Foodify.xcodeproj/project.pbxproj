@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		00113AE5C4B1F1245E0E5B3D /* Pods_Foodify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78ADAA412125A28958719E33 /* Pods_Foodify.framework */; };
 		742C8B28ECDEFE175F09E107 /* Pods_FoodifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120FADDBEAD31D919690DF24 /* Pods_FoodifyTests.framework */; };
+		B086611527F8A0D50098A0CC /* PopularCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086611327F8A0D50098A0CC /* PopularCVC.swift */; };
+		B086611627F8A0D50098A0CC /* PopularCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B086611427F8A0D50098A0CC /* PopularCVC.xib */; };
+		B086611827F8A28E0098A0CC /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086611727F8A28E0098A0CC /* Dish.swift */; };
 		B09EF9B027D3836300A65B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9AF27D3836300A65B54 /* AppDelegate.swift */; };
 		B09EF9B227D3836300A65B54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9B127D3836300A65B54 /* SceneDelegate.swift */; };
 		B09EF9B427D3836300A65B54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9B327D3836300A65B54 /* ViewController.swift */; };
@@ -58,6 +61,9 @@
 		78ADAA412125A28958719E33 /* Pods_Foodify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B47114496F614EC40A2D3AA /* Pods-Foodify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodify.release.xcconfig"; path = "Target Support Files/Pods-Foodify/Pods-Foodify.release.xcconfig"; sourceTree = "<group>"; };
 		9F93A50D2A05A3C498E1F104 /* Pods-Foodify-FoodifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodify-FoodifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Foodify-FoodifyUITests/Pods-Foodify-FoodifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B086611327F8A0D50098A0CC /* PopularCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCVC.swift; sourceTree = "<group>"; };
+		B086611427F8A0D50098A0CC /* PopularCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCVC.xib; sourceTree = "<group>"; };
+		B086611727F8A28E0098A0CC /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		B09EF9AC27D3836300A65B54 /* Foodify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09EF9AF27D3836300A65B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B09EF9B127D3836300A65B54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +144,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B086611227F8A0960098A0CC /* PopularCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B086611327F8A0D50098A0CC /* PopularCVC.swift */,
+				B086611427F8A0D50098A0CC /* PopularCVC.xib */,
+			);
+			path = PopularCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		B09EF9A327D3836300A65B54 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +215,7 @@
 			children = (
 				B09EF9E227D3A35F00A65B54 /* OnboardingSlide.swift */,
 				B09EF9F927D3EF4900A65B54 /* DishCategory.swift */,
+				B086611727F8A28E0098A0CC /* Dish.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +269,7 @@
 		B09EF9F327D3ED6300A65B54 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				B086611227F8A0960098A0CC /* PopularCollectionViewCell */,
 				B09EF9F427D3ED7900A65B54 /* CategoryCollectionViewCell */,
 			);
 			path = CollectionViewCells;
@@ -382,6 +399,7 @@
 				B09EF9B927D3836500A65B54 /* Assets.xcassets in Resources */,
 				B09EF9B727D3836300A65B54 /* Main.storyboard in Resources */,
 				B09EF9E527D3A3B800A65B54 /* Onboarding.storyboard in Resources */,
+				B086611627F8A0D50098A0CC /* PopularCVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,9 +536,11 @@
 				B09EF9EA27D3A78400A65B54 /* UIViews.swift in Sources */,
 				B09EF9F727D3EDA400A65B54 /* CategoryCVC.swift in Sources */,
 				B09EF9E727D3A54200A65B54 /* OnboardingVC.swift in Sources */,
+				B086611827F8A28E0098A0CC /* Dish.swift in Sources */,
 				B09EF9B027D3836300A65B54 /* AppDelegate.swift in Sources */,
 				B09EF9FE27D3F80D00A65B54 /* CardView.swift in Sources */,
 				B09EF9B227D3836300A65B54 /* SceneDelegate.swift in Sources */,
+				B086611527F8A0D50098A0CC /* PopularCVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
