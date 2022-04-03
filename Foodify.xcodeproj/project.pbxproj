@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		00113AE5C4B1F1245E0E5B3D /* Pods_Foodify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78ADAA412125A28958719E33 /* Pods_Foodify.framework */; };
 		742C8B28ECDEFE175F09E107 /* Pods_FoodifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120FADDBEAD31D919690DF24 /* Pods_FoodifyTests.framework */; };
+		B01A35C927F9DABA00F4CBFF /* SpecialsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01A35C727F9DABA00F4CBFF /* SpecialsCVC.swift */; };
+		B01A35CA27F9DABA00F4CBFF /* SpecialsCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01A35C827F9DABA00F4CBFF /* SpecialsCVC.xib */; };
+		B01A35CC27F9EBF600F4CBFF /* DishDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01A35CB27F9EBF600F4CBFF /* DishDetailVC.swift */; };
+		B01A35CE27F9EED000F4CBFF /* CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01A35CD27F9EED000F4CBFF /* CustomExtensions.swift */; };
 		B086611527F8A0D50098A0CC /* PopularCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086611327F8A0D50098A0CC /* PopularCVC.swift */; };
 		B086611627F8A0D50098A0CC /* PopularCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B086611427F8A0D50098A0CC /* PopularCVC.xib */; };
 		B086611827F8A28E0098A0CC /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086611727F8A28E0098A0CC /* Dish.swift */; };
@@ -24,14 +28,12 @@
 		B09EF9E327D3A35F00A65B54 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9E227D3A35F00A65B54 /* OnboardingSlide.swift */; };
 		B09EF9E527D3A3B800A65B54 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09EF9E427D3A3B800A65B54 /* Onboarding.storyboard */; };
 		B09EF9E727D3A54200A65B54 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9E627D3A54200A65B54 /* OnboardingVC.swift */; };
-		B09EF9EA27D3A78400A65B54 /* UIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9E927D3A78400A65B54 /* UIViews.swift */; };
 		B09EF9EC27D3AC5500A65B54 /* OnboardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9EB27D3AC5500A65B54 /* OnboardingCVC.swift */; };
 		B09EF9EF27D3BB8900A65B54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09EF9EE27D3BB8900A65B54 /* Home.storyboard */; };
 		B09EF9F127D3C78700A65B54 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9F027D3C78700A65B54 /* HomeVC.swift */; };
 		B09EF9F727D3EDA400A65B54 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9F527D3EDA400A65B54 /* CategoryCVC.swift */; };
 		B09EF9F827D3EDA400A65B54 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B09EF9F627D3EDA400A65B54 /* CategoryCVC.xib */; };
 		B09EF9FA27D3EF4900A65B54 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9F927D3EF4900A65B54 /* DishCategory.swift */; };
-		B09EF9FC27D3F0B400A65B54 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9FB27D3F0B400A65B54 /* Strings.swift */; };
 		B09EF9FE27D3F80D00A65B54 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9FD27D3F80D00A65B54 /* CardView.swift */; };
 		FC3B03A8C4E2A841DCFD338B /* Pods_Foodify_FoodifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4778A63C74171E58E9D70715 /* Pods_Foodify_FoodifyUITests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,10 @@
 		78ADAA412125A28958719E33 /* Pods_Foodify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B47114496F614EC40A2D3AA /* Pods-Foodify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodify.release.xcconfig"; path = "Target Support Files/Pods-Foodify/Pods-Foodify.release.xcconfig"; sourceTree = "<group>"; };
 		9F93A50D2A05A3C498E1F104 /* Pods-Foodify-FoodifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodify-FoodifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Foodify-FoodifyUITests/Pods-Foodify-FoodifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B01A35C727F9DABA00F4CBFF /* SpecialsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialsCVC.swift; sourceTree = "<group>"; };
+		B01A35C827F9DABA00F4CBFF /* SpecialsCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialsCVC.xib; sourceTree = "<group>"; };
+		B01A35CB27F9EBF600F4CBFF /* DishDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailVC.swift; sourceTree = "<group>"; };
+		B01A35CD27F9EED000F4CBFF /* CustomExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExtensions.swift; sourceTree = "<group>"; };
 		B086611327F8A0D50098A0CC /* PopularCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCVC.swift; sourceTree = "<group>"; };
 		B086611427F8A0D50098A0CC /* PopularCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCVC.xib; sourceTree = "<group>"; };
 		B086611727F8A28E0098A0CC /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
@@ -80,14 +86,12 @@
 		B09EF9E227D3A35F00A65B54 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		B09EF9E427D3A3B800A65B54 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		B09EF9E627D3A54200A65B54 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
-		B09EF9E927D3A78400A65B54 /* UIViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViews.swift; sourceTree = "<group>"; };
 		B09EF9EB27D3AC5500A65B54 /* OnboardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCVC.swift; sourceTree = "<group>"; };
 		B09EF9EE27D3BB8900A65B54 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B09EF9F027D3C78700A65B54 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		B09EF9F527D3EDA400A65B54 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		B09EF9F627D3EDA400A65B54 /* CategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCVC.xib; sourceTree = "<group>"; };
 		B09EF9F927D3EF4900A65B54 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
-		B09EF9FB27D3F0B400A65B54 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B09EF9FD27D3F80D00A65B54 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C11703E24628D6C2C567E542 /* Pods-Foodify-FoodifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodify-FoodifyUITests.release.xcconfig"; path = "Target Support Files/Pods-Foodify-FoodifyUITests/Pods-Foodify-FoodifyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F16C065C9DFDBA23676CD9A8 /* Pods-FoodifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodifyTests.debug.xcconfig"; path = "Target Support Files/Pods-FoodifyTests/Pods-FoodifyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +146,15 @@
 				05AF5D877AC69714132038F3 /* Pods-FoodifyTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B01A35C627F9DA9000F4CBFF /* SpecialsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B01A35C727F9DABA00F4CBFF /* SpecialsCVC.swift */,
+				B01A35C827F9DABA00F4CBFF /* SpecialsCVC.xib */,
+			);
+			path = SpecialsCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		B086611227F8A0960098A0CC /* PopularCollectionViewCell */ = {
@@ -242,8 +255,7 @@
 		B09EF9E827D3A75000A65B54 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B09EF9E927D3A78400A65B54 /* UIViews.swift */,
-				B09EF9FB27D3F0B400A65B54 /* Strings.swift */,
+				B01A35CD27F9EED000F4CBFF /* CustomExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +265,7 @@
 			children = (
 				B09EF9EE27D3BB8900A65B54 /* Home.storyboard */,
 				B09EF9F027D3C78700A65B54 /* HomeVC.swift */,
+				B01A35CB27F9EBF600F4CBFF /* DishDetailVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -269,6 +282,7 @@
 		B09EF9F327D3ED6300A65B54 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				B01A35C627F9DA9000F4CBFF /* SpecialsCollectionViewCell */,
 				B086611227F8A0960098A0CC /* PopularCollectionViewCell */,
 				B09EF9F427D3ED7900A65B54 /* CategoryCollectionViewCell */,
 			);
@@ -393,6 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B01A35CA27F9DABA00F4CBFF /* SpecialsCVC.xib in Resources */,
 				B09EF9F827D3EDA400A65B54 /* CategoryCVC.xib in Resources */,
 				B09EF9BC27D3836500A65B54 /* LaunchScreen.storyboard in Resources */,
 				B09EF9EF27D3BB8900A65B54 /* Home.storyboard in Resources */,
@@ -528,17 +543,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B09EF9E327D3A35F00A65B54 /* OnboardingSlide.swift in Sources */,
-				B09EF9FC27D3F0B400A65B54 /* Strings.swift in Sources */,
+				B01A35CC27F9EBF600F4CBFF /* DishDetailVC.swift in Sources */,
 				B09EF9FA27D3EF4900A65B54 /* DishCategory.swift in Sources */,
 				B09EF9F127D3C78700A65B54 /* HomeVC.swift in Sources */,
 				B09EF9EC27D3AC5500A65B54 /* OnboardingCVC.swift in Sources */,
 				B09EF9B427D3836300A65B54 /* ViewController.swift in Sources */,
-				B09EF9EA27D3A78400A65B54 /* UIViews.swift in Sources */,
+				B01A35C927F9DABA00F4CBFF /* SpecialsCVC.swift in Sources */,
 				B09EF9F727D3EDA400A65B54 /* CategoryCVC.swift in Sources */,
 				B09EF9E727D3A54200A65B54 /* OnboardingVC.swift in Sources */,
 				B086611827F8A28E0098A0CC /* Dish.swift in Sources */,
 				B09EF9B027D3836300A65B54 /* AppDelegate.swift in Sources */,
 				B09EF9FE27D3F80D00A65B54 /* CardView.swift in Sources */,
+				B01A35CE27F9EED000F4CBFF /* CustomExtensions.swift in Sources */,
 				B09EF9B227D3836300A65B54 /* SceneDelegate.swift in Sources */,
 				B086611527F8A0D50098A0CC /* PopularCVC.swift in Sources */,
 			);
