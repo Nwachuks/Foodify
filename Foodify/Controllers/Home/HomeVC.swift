@@ -45,7 +45,14 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         specialsCollectionView.dataSource = self
         // Do any additional setup after loading the view.
         registerCells()
-        NetworkManager.instance.firstRequest()
+        NetworkManager.instance.firstRequest { result in
+            switch result {
+            case .success(let data):
+                print("The decoded data is:\n\(data)")
+            case .failure(let error):
+                print("The error is: \(error.localizedDescription)")
+            }
+        }
     }
     
     // MARK: CollectionView Delegate methods

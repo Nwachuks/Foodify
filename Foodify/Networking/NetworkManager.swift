@@ -12,13 +12,11 @@ struct NetworkManager {
     
     private init() {}
     
-    func firstRequest() {
-        request(route: .temp, method: .get, parameters: nil, type: String.self) { _ in
-            //
-        }
+    func firstRequest(completion: @escaping (Result<[Dish], Error>) -> Void) {
+        request(route: .temp, method: .get, parameters: nil, completion: completion)
     }
     
-    private func request<T: Codable>(route: RequestRoute, method: RequestMethod, parameters: [String:Any]? = nil, type: T.Type, completion: (Result<T, Error>) -> Void) {
+    private func request<T: Decodable>(route: RequestRoute, method: RequestMethod, parameters: [String:Any]? = nil, completion: @escaping (Result<T, Error>) -> Void) {
         guard let request = createRequest(route: route, method: method, parameters: parameters) else {
             completion(.failure(AppError.unknownError))
             return
@@ -36,9 +34,37 @@ struct NetworkManager {
             }
             
             DispatchQueue.main.async {
-                 
+                self.handleResponse(result: result, completion: completion)
             }
         }.resume()
+    }
+    
+    private func handleResponse<T: Decodable>(result: Result<Data, Error>?, completion: (Result<T, Error>) -> Void) {
+        guard let result = result else {
+            completion(.failure(AppError.unknownError))
+            return
+        }
+
+        switch result {
+        case .success(let data):
+            let decoder = JSONDecoder()
+            guard let response = try? decoder.decode(APIResponse<T>.self, from: data) else {
+                completion(.failure(AppError.errorDecoding))
+                return
+            }
+            
+            if let error = response.error {
+                completion(.failure(AppError.serverError(error)))
+            }
+            
+            if let decodedData = response.data  {
+                completion(.success(decodedData))
+            } else {
+                completion(.failure(AppError.unknownError))
+            }
+        case .failure(let error):
+            completion(.failure(error))
+        }
     }
     
     /// Create URL request
