@@ -12,8 +12,8 @@ struct NetworkManager {
     
     private init() {}
     
-    func firstRequest(completion: @escaping (Result<[Dish], Error>) -> Void) {
-        request(route: .temp, method: .get, parameters: nil, completion: completion)
+    func fetchAllCategories(completion: @escaping(Result<AllDishes, Error>) -> Void) {
+        request(route: .fetchAllCategories, method: .get, completion: completion)
     }
     
     private func request<T: Decodable>(route: RequestRoute, method: RequestMethod, parameters: [String:Any]? = nil, completion: @escaping (Result<T, Error>) -> Void) {
@@ -26,8 +26,8 @@ struct NetworkManager {
             var result: Result<Data, Error>?
             if let data = data {
                 result = .success(data)
-                let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify our data"
-                print("The response is:\n\(responseString)")
+                let _ = String(data: data, encoding: .utf8) ?? "Could not stringify our data"
+//                print("The response is:\n\(responseString)")
             } else if let error = error {
                 result = .failure(error)
                 print("The error is: \(error.localizedDescription)")
@@ -55,6 +55,7 @@ struct NetworkManager {
             
             if let error = response.error {
                 completion(.failure(AppError.serverError(error)))
+                return
             }
             
             if let decodedData = response.data  {

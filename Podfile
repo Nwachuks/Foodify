@@ -6,7 +6,8 @@ target 'Foodify' do
   use_frameworks!
 
   # Pods for Foodify
-  pod "Kingfisher"
+  pod 'Kingfisher'
+  pod 'SVProgressHUD'
 
   target 'FoodifyTests' do
     inherit! :search_paths

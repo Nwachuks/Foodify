@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -14,22 +15,22 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     @IBOutlet weak var specialsCollectionView: UICollectionView!
     
     var categories: [DishCategory] = [
-        .init(id: "id1", name: "Africa Dish", image: "https://picsum.photos/100/200"),
-        .init(id: "id2", name: "Africa Dish 2", image: "https://picsum.photos/100/200"),
-        .init(id: "id3", name: "Africa Dish 3", image: "https://picsum.photos/100/200"),
-        .init(id: "id4", name: "Africa Dish 4", image: "https://picsum.photos/100/200"),
-        .init(id: "id5", name: "Africa Dish 5", image: "https://picsum.photos/100/200")
+//        .init(id: "id1", title: "Africa Dish", image: "https://picsum.photos/100/200"),
+//        .init(id: "id2", title: "Africa Dish 2", image: "https://picsum.photos/100/200"),
+//        .init(id: "id3", title: "Africa Dish 3", image: "https://picsum.photos/100/200"),
+//        .init(id: "id4", title: "Africa Dish 4", image: "https://picsum.photos/100/200"),
+//        .init(id: "id5", title: "Africa Dish 5", image: "https://picsum.photos/100/200")
     ]
     
     var popularDishes: [Dish] = [
-        .init(id: "id1", name: "Garri", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted", calories: 34),
-        .init(id: "id2", name: "Indomie", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted", calories: 334),
-        .init(id: "id3", name: "Pizza", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted", calories: 34456)
+//        .init(id: "id1", name: "Garri", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted", calories: 34),
+//        .init(id: "id2", name: "Indomie", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted", calories: 334),
+//        .init(id: "id3", name: "Pizza", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted", calories: 34456)
     ]
     
     var specials: [Dish] = [
-        .init(id: "id1", name: "Fried Plantain", image: "https://picsum.photos/100/200", description: "The best plantain you ever tasted", calories: 35),
-        .init(id: "id2", name: "Beans and Garri", image: "https://picsum.photos/100/200", description: "The best combo you ever tasted", calories: 333)
+//        .init(id: "id1", name: "Fried Plantain", image: "https://picsum.photos/100/200", description: "The best plantain you ever tasted", calories: 35),
+//        .init(id: "id2", name: "Beans and Garri", image: "https://picsum.photos/100/200", description: "The best combo you ever tasted", calories: 333)
     ]
     
     override func viewDidLoad() {
@@ -45,12 +46,23 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         specialsCollectionView.dataSource = self
         // Do any additional setup after loading the view.
         registerCells()
-        NetworkManager.instance.firstRequest { result in
+        
+        SVProgressHUD.show()
+        NetworkManager.instance.fetchAllCategories { [weak self] (result) in
             switch result {
-            case .success(let data):
-                print("The decoded data is:\n\(data)")
+            case .success(let allDishes):
+                SVProgressHUD.dismiss()
+                self?.categories = allDishes.categories ?? []
+                self?.popularDishes = allDishes.populars ?? []
+                self?.specials = allDishes.specials ?? []
+                
+                DispatchQueue.main.async {
+                    self?.categoryCollectionView.reloadData()
+                    self?.popularCollectionView.reloadData()
+                    self?.specialsCollectionView.reloadData()
+                }
             case .failure(let error):
-                print("The error is: \(error.localizedDescription)")
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
             }
         }
     }

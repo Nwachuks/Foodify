@@ -23,7 +23,7 @@ class DishesListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         dishesListTableView.delegate = self
         dishesListTableView.dataSource = self
         // Do any additional setup after loading the view.
-        title = category.name
+        title = category.title
         registerCells()
     }
     
