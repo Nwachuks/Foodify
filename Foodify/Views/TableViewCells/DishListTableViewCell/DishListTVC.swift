@@ -31,4 +31,10 @@ class DishListTVC: UITableViewCell {
         dishDescriptionLabel.text = dish.description
     }
     
+    func setup(order: Order) {
+        dishImageView.kf.setImage(with: order.dish?.image?.asUrl)
+        dishTitleLabel.text = order.dish?.name
+        dishDescriptionLabel.text = order.name
+    }
+    
 }

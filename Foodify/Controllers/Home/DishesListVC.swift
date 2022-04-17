@@ -42,7 +42,7 @@ class DishesListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {b
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = DishDetailVC.instantiate(from: "Home")
         controller.dish = dishes[indexPath.row]
         navigationController?.pushViewController(controller, animated: true)
