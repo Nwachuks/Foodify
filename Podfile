@@ -8,6 +8,7 @@ target 'Foodify' do
   # Pods for Foodify
   pod 'Kingfisher'
   pod 'SVProgressHUD'
+  pod 'IQKeyboardManagerSwift'
 
   target 'FoodifyTests' do
     inherit! :search_paths

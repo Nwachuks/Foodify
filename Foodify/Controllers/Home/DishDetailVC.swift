@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import SVProgressHUD
 
 class DishDetailVC: UIViewController {
     @IBOutlet weak var dishImageView: UIImageView!
@@ -31,7 +32,20 @@ class DishDetailVC: UIViewController {
     }
     
     @IBAction func placeOrderTapped(_ sender: UIButton) {
+        guard let name = nameField.text?.trimmingCharacters(in: .whitespaces), !name.isEmpty else {
+            SVProgressHUD.showError(withStatus: "Please enter your name")
+            return
+        }
         
+        SVProgressHUD.show(withStatus: "Placing order...")
+        NetworkManager.instance.placeOrder(dishID: dish.id ?? "", name: name) { result in
+            switch result {
+            case .success(_):
+                SVProgressHUD.showSuccess(withStatus: "Your order has been successfully placed 🥳")
+            case .failure(let error):
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }
+        }
     }
     
 }
