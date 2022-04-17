@@ -86,7 +86,9 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollectionView {
-            
+            let controller = DishesListVC.instantiate(from: "Home")
+            controller.category = categories[indexPath.row]
+            navigationController?.pushViewController(controller, animated: true)
         } else {
             let controller = DishDetailVC.instantiate(from: "Home")
             controller.dish = collectionView == popularCollectionView ? popularDishes[indexPath.row] : specials[indexPath.row]

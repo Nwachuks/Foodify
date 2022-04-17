@@ -305,6 +305,36 @@
             </objects>
             <point key="canvasLocation" x="1908.6956521739132" y="85.714285714285708"/>
         </scene>
+        <!--Dishes ListVC-->
+        <scene sceneID="N5M-qH-c6o">
+            <objects>
+                <viewController storyboardIdentifier="DishesListVC" id="CBS-2Z-aai" customClass="DishesListVC" customModule="Foodify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y5z-X5-urv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pAA-Ao-Bxh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Njl-ek-0g0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pAA-Ao-Bxh" secondAttribute="bottom" id="439-hj-8SX"/>
+                            <constraint firstItem="pAA-Ao-Bxh" firstAttribute="leading" secondItem="Njl-ek-0g0" secondAttribute="leading" id="W13-ht-BQ5"/>
+                            <constraint firstItem="pAA-Ao-Bxh" firstAttribute="trailing" secondItem="Njl-ek-0g0" secondAttribute="trailing" id="aAW-Tf-ELQ"/>
+                            <constraint firstItem="pAA-Ao-Bxh" firstAttribute="top" secondItem="Njl-ek-0g0" secondAttribute="top" id="xQe-k0-K7t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dishesListTableView" destination="pAA-Ao-Bxh" id="aEp-Ku-gS9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uAd-hi-w2Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2666.666666666667" y="85.714285714285708"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="XDG-VB-Cpt">
             <objects>
@@ -326,6 +356,9 @@
     </scenes>
     <resources>
         <image name="cart.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
