@@ -6,16 +6,12 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class OrdersListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var ordersTableView: UITableView!
     
-    var orders: [Order] = [
-        .init(id: "id1", name: "Emmanuel", dish: .init(id: "id1", name: "Garri", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted", calories: 34)),
-        .init(id: "id1", name: "Faith", dish: .init(id: "id1", name: "Beans", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted", calories: 34)),
-        .init(id: "id1", name: "Michael", dish: .init(id: "id1", name: "Rice", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted", calories: 34)),
-        .init(id: "id1", name: "John", dish: .init(id: "id1", name: "Yam", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted", calories: 34))
-    ]
+    var orders = [Order]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +20,23 @@ class OrdersListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         ordersTableView.dataSource = self
         // Do any additional setup after loading the view.
         registerCells()
+        
+        SVProgressHUD.show()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NetworkManager.instance.fetchOrders { [weak self] result in
+            switch result {
+            case .success(let orders):
+                SVProgressHUD.dismiss()
+                self?.orders = orders
+                DispatchQueue.main.async {
+                    self?.ordersTableView.reloadData()
+                }
+            case .failure(let error):
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }
+        }
     }
     
     private func registerCells() {
