@@ -65,6 +65,7 @@
                             <constraint firstItem="7d8-P5-cuE" firstAttribute="leading" secondItem="dOM-UI-9p2" secondAttribute="trailing" constant="16" id="j5p-kS-bQk"/>
                             <constraint firstItem="7d8-P5-cuE" firstAttribute="bottom" secondItem="dOM-UI-9p2" secondAttribute="bottom" id="oMS-8V-MfU"/>
                             <constraint firstAttribute="bottom" secondItem="dOM-UI-9p2" secondAttribute="bottom" constant="16" id="pwH-UL-8Km"/>
+                            <constraint firstAttribute="width" constant="330" id="yyr-RP-i2S"/>
                         </constraints>
                     </view>
                 </subviews>
