@@ -37,8 +37,10 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         title = "Foodify"
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
+        
         popularCollectionView.delegate = self
         popularCollectionView.dataSource = self
+        
         specialsCollectionView.delegate = self
         specialsCollectionView.dataSource = self
         // Do any additional setup after loading the view.
