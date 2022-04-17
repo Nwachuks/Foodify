@@ -22,6 +22,10 @@ struct NetworkManager {
         request(route: .placeOrder(dishID), method: .post, parameters: params, completion: completion)
     }
     
+    func fetchCategoryDishes(categoryID: String, completion: @escaping(Result<[Dish], Error>) -> Void) {
+        request(route: .fetchCategoryDishes(categoryID), method: .get, completion: completion)
+    }
+    
     private func request<T: Decodable>(route: RequestRoute, method: RequestMethod, parameters: [String:Any]? = nil, completion: @escaping (Result<T, Error>) -> Void) {
         guard let request = createRequest(route: route, method: method, parameters: parameters) else {
             completion(.failure(AppError.unknownError))

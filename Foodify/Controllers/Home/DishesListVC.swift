@@ -6,17 +6,13 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DishesListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var dishesListTableView: UITableView!
     
     var category: DishCategory!
-    
-    var dishes: [Dish] = [
-        .init(id: "id1", name: "Garri", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted", calories: 34),
-        .init(id: "id2", name: "Indomie", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted The best cassava flakes you ever tasted", calories: 334),
-        .init(id: "id3", name: "Pizza", image: "https://picsum.photos/100/200", description: "The best cassava flakes you ever tasted", calories: 34456)
-    ]
+    var dishes = [Dish]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +21,20 @@ class DishesListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         // Do any additional setup after loading the view.
         title = category.title
         registerCells()
+        
+        SVProgressHUD.show()
+        NetworkManager.instance.fetchCategoryDishes(categoryID: category.id) { [weak self] result in
+            switch result {
+            case .success(let dishes):
+                SVProgressHUD.dismiss()
+                self?.dishes = dishes
+                DispatchQueue.main.async {
+                    self?.dishesListTableView.reloadData()
+                }
+            case .failure(let error):
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }
+        }
     }
     
     private func registerCells() {
