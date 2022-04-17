@@ -24,6 +24,7 @@
 		B099118E280C9589004229AD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099118D280C9589004229AD /* NetworkManager.swift */; };
 		B0991190280C9655004229AD /* RequestRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099118F280C9655004229AD /* RequestRoute.swift */; };
 		B0991192280C96AA004229AD /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0991191280C96AA004229AD /* RequestMethod.swift */; };
+		B0991194280C9CF7004229AD /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0991193280C9CF7004229AD /* AppError.swift */; };
 		B09EF9B027D3836300A65B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9AF27D3836300A65B54 /* AppDelegate.swift */; };
 		B09EF9B227D3836300A65B54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9B127D3836300A65B54 /* SceneDelegate.swift */; };
 		B09EF9B427D3836300A65B54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09EF9B327D3836300A65B54 /* ViewController.swift */; };
@@ -86,6 +87,7 @@
 		B099118D280C9589004229AD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B099118F280C9655004229AD /* RequestRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRoute.swift; sourceTree = "<group>"; };
 		B0991191280C96AA004229AD /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		B0991193280C9CF7004229AD /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		B09EF9AC27D3836300A65B54 /* Foodify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09EF9AF27D3836300A65B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B09EF9B127D3836300A65B54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				B099118D280C9589004229AD /* NetworkManager.swift */,
 				B099118F280C9655004229AD /* RequestRoute.swift */,
 				B0991191280C96AA004229AD /* RequestMethod.swift */,
+				B0991193280C9CF7004229AD /* AppError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				B09EF9E727D3A54200A65B54 /* OnboardingVC.swift in Sources */,
 				B086611827F8A28E0098A0CC /* Dish.swift in Sources */,
 				B09EF9B027D3836300A65B54 /* AppDelegate.swift in Sources */,
+				B0991194280C9CF7004229AD /* AppError.swift in Sources */,
 				B099118E280C9589004229AD /* NetworkManager.swift in Sources */,
 				B09EF9FE27D3F80D00A65B54 /* CardView.swift in Sources */,
 				B01A35CE27F9EED000F4CBFF /* CustomExtensions.swift in Sources */,

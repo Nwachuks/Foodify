@@ -45,6 +45,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         specialsCollectionView.dataSource = self
         // Do any additional setup after loading the view.
         registerCells()
+        NetworkManager.instance.firstRequest()
     }
     
     // MARK: CollectionView Delegate methods
