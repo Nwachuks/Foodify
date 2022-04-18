@@ -42,6 +42,7 @@ class OnboardingVC: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func nextBtnTapped(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
             // Get started - go to home page
+            UserDefaults.standard.hasOnboarded = true
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
             controller.modalPresentationStyle = .fullScreen

@@ -13,25 +13,24 @@ struct NetworkManager {
     private init() {}
     
     func fetchAllCategories(completion: @escaping(Result<AllDishes, Error>) -> Void) {
-        request(route: .fetchAllCategories, method: .get, completion: completion)
+        makeRequest(route: .fetchAllCategories, method: .get, completion: completion)
     }
     
     func placeOrder(dishID: String, name: String, completion: @escaping(Result<Order, Error>) -> Void) {
         let params = ["name": name]
-        
-        request(route: .placeOrder(dishID), method: .post, parameters: params, completion: completion)
+        makeRequest(route: .placeOrder(dishID), method: .post, parameters: params, completion: completion)
     }
     
     func fetchCategoryDishes(categoryID: String, completion: @escaping(Result<[Dish], Error>) -> Void) {
-        request(route: .fetchCategoryDishes(categoryID), method: .get, completion: completion)
+        makeRequest(route: .fetchCategoryDishes(categoryID), method: .get, completion: completion)
     }
     
     func fetchOrders(completion: @escaping(Result<[Order], Error>) -> Void) {
-        request(route: .fetchOrders, method: .get, completion: completion)
+        makeRequest(route: .fetchOrders, method: .get, completion: completion)
     }
     
-    private func request<T: Decodable>(route: RequestRoute, method: RequestMethod, parameters: [String:Any]? = nil, completion: @escaping (Result<T, Error>) -> Void) {
-        guard let request = createRequest(route: route, method: method, parameters: parameters) else {
+    private func makeRequest<T: Decodable>(route: RequestRoute, method: RequestMethod, parameters: [String:Any]? = nil, completion: @escaping (Result<T, Error>) -> Void) {
+        guard let request = createRequestURL(route: route, method: method, parameters: parameters) else {
             completion(.failure(AppError.unknownError))
             return
         }
@@ -88,7 +87,7 @@ struct NetworkManager {
     ///   - method: The resource path method type
     ///   - parameters: The optional request body
     /// - Returns: A URLRequest
-    private func createRequest(route: RequestRoute, method: RequestMethod, parameters: [String:Any]? = nil) -> URLRequest? {
+    private func createRequestURL(route: RequestRoute, method: RequestMethod, parameters: [String:Any]? = nil) -> URLRequest? {
         let urlString = RequestRoute.baseURL + route.description
         guard let url = urlString.asUrl else { return nil }
         var urlRequest = URLRequest(url: url)
